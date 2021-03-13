@@ -22,7 +22,7 @@ module BuildPack
         @tmp_path = "#{build_dir}/tmp"
         @mysql_path = "#{@tmp_path}/mysql"
         @mysql_binaries = "#{@mysql_path}/usr/bin"
-        @mysql_pkg = "#{cache_dir}/mysql.deb"
+        @mysql_pkg = "#{cache_dir}/mysql8.0.deb"
       end
 
       def make_dirs
