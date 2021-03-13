@@ -6,7 +6,7 @@ This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) fo
 
 ## Versions
 
-* MySQL: `5.7`
+- MySQL: `8.0`
 
 ## Bug Notice
 
