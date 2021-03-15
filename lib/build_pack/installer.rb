@@ -55,16 +55,21 @@ module BuildPack
       end
 
       def fix_perms_and_mv_binaries
+        Logger.log("Directories:")
+        Logger.log("#{Dir.glob("#{@tmp_path}/*")}")
+        Logger.log("#{Dir.glob("#{@mysql_path}/*")}")
+        Logger.log("#{Dir.glob("#{@mysql_path}/usr/*")}")
+        Logger.log("#{Dir.glob("#{@mysql_path}/usr/bin/*")}")
         # TODO: Doing a glob for some reason causes issues on heroku-16,
         #       erroring out as it can't find the files to chmod and mv.
         #       Specifying `mysqldump` specifically for now. Otherwise use:
         # ```
         # binaries = Dir.glob("#{@mysql_binaries}/*")
         # ```
-        mysqldump_binary = Dir.glob("#{@mysql_binaries}/mysqldump")
-        Logger.log("#{mysqldump_binary}")
-        FileUtils.chmod("u=wrx", mysqldump_binary)
-        FileUtils.mv(mysqldump_binary, @bin_path)
+        #mysqldump_binary = Dir.glob("#{@mysql_binaries}/*")
+        #Logger.log("#{mysqldump_binary}")
+        #FileUtils.chmod("u=wrx", mysqldump_binary)
+        #FileUtils.mv(mysqldump_binary, @bin_path)
       end
 
       def cleanup
